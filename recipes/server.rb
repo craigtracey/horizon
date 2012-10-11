@@ -47,7 +47,7 @@ end
 
 ks_admin_endpoint = get_access_endpoint("keystone", "keystone", "admin-api")
 ks_service_endpoint = get_access_endpoint("keystone", "keystone", "service-api")
-keystone = get_settings_by_role("keystone", "keystone")
+keystone = get_settings_by_role(node["horizon"]["keystone_service_chef_role"], "keystone")
 
 #creates db and user
 #returns connection info

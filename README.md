@@ -42,6 +42,8 @@ server
 
 Attributes
 ==========
+
+* `horizon["keystone_service_chef_role"]` - The name of the Chef role that installs the Keystone Service API
 * `horizon["db"]["name"]` - name of horizon database
 * `horizon["db"]["username"]` - username for horizon database access
 * `horizon["db"]["password"]` - password for horizon database access
