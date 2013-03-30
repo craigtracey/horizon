@@ -21,3 +21,14 @@ end
 
 default["horizon"]["dash_path"] = "/usr/share/openstack-dashboard/openstack_dashboard"
 default["horizon"]["wsgi_path"] = node["horizon"]["dash_path"] + "/wsgi"
+
+case platform
+when "ubuntu", "debian"
+  default["horizon"]["platform"] = {
+    "dashboard_packages" => ['openstack-dashboard', 'node-less']
+  }
+when "fedora", "centos", "redhat", "amazon", "scientific"
+  default["horizon"]["platform"] = {
+    "dashboard_packages" => ['openstack-dashboard']
+  }
+end
